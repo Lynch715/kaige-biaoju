@@ -1,0 +1,7 @@
+目标链接：https://lynch715.github.io/kaige-biaoju/
+
+ZXing 解码结果：
+- 开个镖局-Pages二维码.png：通过
+- 开个镖局-像素宣传海报.png：通过
+
+两个文件均还原为上述完整 Pages 链接。
