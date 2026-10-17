@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>开个镖局 · 弹窗回归验收</title>
+<style>
+body{margin:16px;font:16px system-ui;background:#eee5d4;color:#27221c}button{padding:10px;margin:4px}iframe{display:block;border:1px solid #927b59;background:#f4ead6;max-width:none}pre{white-space:pre-wrap}#stage{overflow:auto}
+</style>
+<h1>弹窗与移动布局回归验收</h1>
+<p>仅测试本地游戏副本；测试页关闭存档写入，不修改已有进度。</p>
+<button id="run">运行全部检查</button><button id="preview">查看晨雾事件（393×852）</button>
+<pre id="result">正在加载…</pre><div id="stage"><iframe id="game" width="393" height="852" title="游戏测试视口"></iframe></div>
+<script type="module" src="dialog-audit.mjs"></script>
+</html>

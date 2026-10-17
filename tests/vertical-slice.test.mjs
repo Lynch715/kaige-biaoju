@@ -16,6 +16,7 @@ const element = id => {
     textContent: '',
     open: false,
     classList: { add() {}, remove() {}, toggle() {} },
+    querySelector() { return null; },
     showModal() { this.open = true; },
     close() { this.open = false; }
   });

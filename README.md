@@ -20,3 +20,18 @@ https://lynch715.github.io/kaige-biaoju/
 - 手机与桌面浏览器均可游玩，进度保存在本机浏览器（旧存档自动升级）
 
 直接打开 `index.html` 也可离线运行。
+
+## 回归验收
+
+修改弹窗、布局或事件展示逻辑后，运行：
+
+```sh
+node tests/vertical-slice.test.mjs
+python3 -m http.server 8791 --bind 127.0.0.1
+```
+
+用 Codex 应用内浏览器打开 `http://127.0.0.1:8791/tests/dialog-audit.html`，点击“运行全部检查”。所有检查应通过。该页面覆盖全部 22 个路遇、宿敌、同行、派镖、人物、结算、手册、长正文、17 种视口/安全区/字体组合（含布局断点两侧），以及弹窗排队、取消、提示、存档恢复和屏幕旋转。
+
+安装了 Playwright 与 WebKit 后，也可运行 `node tests/run-dialog-audit.mjs` 自动验收。可通过 `PLAYWRIGHT_MODULE` 指定已有 Playwright 模块路径，通过 `PLAYWRIGHT_BROWSERS_PATH` 指定引擎目录，通过 `BASE_URL` 指定本地服务地址。结果与截图写入 `output/playwright/`；失败时返回非零退出码。
+
+验收结论与范围见 [AUDIT.md](AUDIT.md)。浏览器尺寸模拟和 WebKit 回归不能代替 iPhone 真机验收。
